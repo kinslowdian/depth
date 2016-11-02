@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+html, body
+{
+	width: 100%;
+	height: 100%;
+}
+
+.fill
+{
+	position: absolute;
+	left: 0; right: 0; top: 0; bottom: 0; 
+}
+
+.p-display
+{
+	width: 100%;
+	height: 100%;
+
+	overflow: hidden;
+
+	background: #1f1f33;
+}
+
+.p-content
+{
+	width: inherit;
+	height: inherit;
+}
+
+.parti
+{
+	border-radius: 50%;
+	position: absolute;
+	background: #cc0066;
+}
+
+.p-layer
+{
+	transform-origin: 50% 50%;
+}
+
+.tween-zoom
+{	
+	animation: tweenZoomFrames linear forwards;
+}
+
+.tween-zoom-s0
+{
+	animation-duration: 5s;
+}
+
+.tween-zoom-s1
+{
+	animation-duration: 10s;
+}
+
+.tween-zoom-s2
+{
+	animation-duration: 20s;
+}
+
+.tween-zoom-s3
+{
+	animation-duration: 30s;
+}
+
+@keyframes tweenZoomFrames
+{
+	0%		{ transform: scale(1); opacity: 0; }
+	33%		{ transform: scale(2); opacity: 1; }
+	66%		{ transform: scale(3); opacity: 1; }	
+	100%	{ transform: scale(4); opacity: 0; }
+}
