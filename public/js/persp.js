@@ -77,6 +77,15 @@ function perspi_populate_run(layer, parentNum)
 		p.style.width 		= build[j].s + 'px';
 		p.style.height 		= build[j].s + 'px';
 	}
+
+	layer.addEventListener("animationend", perspi_event, false);
+}
+
+function perspi_event(event)
+{
+	var classRef = event.target.classList[0];
+	
+	trace(classRef);
 }
 
 
