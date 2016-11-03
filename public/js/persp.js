@@ -26,6 +26,11 @@ function perspi_setup()
 	perspi_main.display.w = screen.width;
 	perspi_main.display.h = screen.height;
 
+	perspi_main.timing = 0;
+	perspi_main.timingVal = 2;
+
+	// (p.timing * p.layers) * (p.timingVal + depth)
+
 	perspi_registerLayers();
 }
 
@@ -78,9 +83,30 @@ function perspi_populate_run(layer, parentNum)
 		p.style.height 		= build[j].s + 'px';
 	}
 
+	perspi_loop(layer);
+}
+
+function perspi_loop(layer)
+{
+	var depth = 0;
+	var seconds = 0;
+
+	depth 	= parseInt(layer.getAttribute("data-depth"));
+
+	if(depth == 1)
+	{
+		perspi_main.timing ++;
+	}
+
+	seconds = (perspi_main.timing * perspi_main.layers) * (perspi_main.timingVal + depth);
+
+	trace("test " + depth + " " + seconds);
+
+	layer.style.animationDuration = seconds + 's';
+
 	layer.classList.add("tween-zoom");
 
-	layer.addEventListener("animationend", perspi_event, false);
+	layer.addEventListener("animationend", perspi_event, false);	
 }
 
 function perspi_event(event)
@@ -96,14 +122,6 @@ function perspi_event(event)
 	// perspi_loop(classTarget);
 
 	exitFrame = setTimeout(perspi_loop, 20, classTarget);
-}
-
-function perspi_loop(layer)
-{
-	trace(layer);
-
-	layer.classList.add("tween-zoom");
-	layer.addEventListener("animationend", perspi_event, false);
 }
 
 
