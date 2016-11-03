@@ -78,14 +78,32 @@ function perspi_populate_run(layer, parentNum)
 		p.style.height 		= build[j].s + 'px';
 	}
 
+	layer.classList.add("tween-zoom");
+
 	layer.addEventListener("animationend", perspi_event, false);
 }
 
 function perspi_event(event)
 {
 	var classRef = event.target.classList[0];
-	
-	trace(classRef);
+	var classTarget = document.querySelector('.' + classRef);
+	var exitFrame;
+
+
+	classTarget.removeEventListener("animationend", perspi_event, false);
+	classTarget.classList.remove("tween-zoom");
+
+	// perspi_loop(classTarget);
+
+	exitFrame = setTimeout(perspi_loop, 20, classTarget);
+}
+
+function perspi_loop(layer)
+{
+	trace(layer);
+
+	layer.classList.add("tween-zoom");
+	layer.addEventListener("animationend", perspi_event, false);
 }
 
 

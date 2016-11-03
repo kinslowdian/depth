@@ -38,6 +38,7 @@ html, body
 .p-layer
 {
 	transform-origin: 50% 50%;
+	opacity: 0;
 }
 
 .tween-zoom
