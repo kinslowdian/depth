@@ -88,6 +88,7 @@ function perspi_populate_run(layer, parentNum)
 
 function perspi_loop(layer)
 {
+	/*
 	var depth = 0;
 	var seconds = 0;
 
@@ -101,8 +102,9 @@ function perspi_loop(layer)
 	seconds = (perspi_main.timing * perspi_main.layers) * (perspi_main.timingVal + depth);
 
 	trace("test " + depth + " " + seconds);
-
+	
 	layer.style.animationDuration = seconds + 's';
+	*/
 
 	layer.classList.add("tween-zoom");
 
