@@ -68,8 +68,8 @@ html, body
 
 @keyframes tweenZoomFrames
 {
-	0%		{ transform: scale(1); opacity: 0; }
+	0%		{ transform: scale(0.5); opacity: 0; }
 	33%		{ transform: scale(2); opacity: 1; }
-	66%		{ transform: scale(3); opacity: 1; }	
-	100%	{ transform: scale(4); opacity: 0; }
+	66%		{ transform: scale(8); opacity: 1; }	
+	100%	{ transform: scale(32); opacity: 0; }
 }
