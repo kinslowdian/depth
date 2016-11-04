@@ -31,6 +31,9 @@ function perspi_setup()
 
 	// (p.timing * p.layers) * (p.timingVal + depth)
 
+	perspi_main.colorVals = new Array();
+	perspi_main.colorVals = ["#3F6F76", "#69B7CE", "#C65840", "#F4CE4B", "#62496F", "#fff"];
+
 	perspi_registerLayers();
 }
 
@@ -77,10 +80,12 @@ function perspi_populate_run(layer, parentNum)
 	for(var j = 0; j < build.length; j++)
 	{
 		var p = layer.querySelector('.parti_' + parentNum + '_' + j);
+		var c = Math.floor(Math.random() * perspi_main.colorVals.length);
 
 		p.style.transform 	= 'translate(' + build[j].x + 'px, ' + build[j].y + 'px)';
 		p.style.width 		= build[j].s + 'px';
 		p.style.height 		= build[j].s + 'px';
+		p.style.background 	= perspi_main.colorVals[c];
 	}
 
 	perspi_loop(layer);
