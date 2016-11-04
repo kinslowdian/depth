@@ -32,7 +32,6 @@ html, body
 {
 	border-radius: 50%;
 	position: absolute;
-	background: #cc0066;
 }
 
 .p-layer
@@ -76,4 +75,24 @@ html, body
 	33%		{ transform: scale(2) rotate(90deg); opacity: 1; }
 	66%		{ transform: scale(4) rotate(180deg); opacity: 1; }	
 	100%	{ transform: scale(6) rotate(270deg); opacity: 0; }
+}
+
+.void
+{
+	width: 600px;
+	height: 600px;
+	border-radius: 50%;
+	position: absolute;
+
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%);
+
+	background: radial-gradient(ellipse at center, rgba(228, 147, 10, 0.8) 0%, rgba(222, 194, 59, 0.5) 80%);
+	/*background: red;*/
+}
+
+.blur
+{
+	-webkit-filter: blur(60px);
+	filter: blur(60px);
 }
