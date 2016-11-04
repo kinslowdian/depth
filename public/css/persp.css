@@ -43,29 +43,27 @@ html, body
 .tween-zoom
 {	
 	animation: tweenZoomFrames 30s linear forwards;
+
+	backface-visibility: hidden;
 }
 
 .tween-zoom-s0
 {
-	/*animation-duration: 4000ms;*/
 	animation-delay: 0s;
 }
 
 .tween-zoom-s1
 {
-	/*animation-duration: 5000ms;*/
 	animation-delay: 5s;
 }
 
 .tween-zoom-s2
 {
-	/*animation-duration: 6000ms;*/
 	animation-delay: 10s;
 }
 
 .tween-zoom-s3
 {
-	/*animation-duration: 7000s;*/
 	animation-delay: 15s;
 }
 
@@ -84,6 +82,8 @@ html, body
 	border-radius: 50%;
 	position: absolute;
 
+	transform-origin: 50% 50%;
+
 	left: 50%; top: 50%;
 	transform: translate(-50%, -50%);
 
@@ -95,4 +95,23 @@ html, body
 {
 	-webkit-filter: blur(60px);
 	filter: blur(60px);
+}
+
+.blur-mini
+{
+/*	-webkit-filter: blur(4px);
+	filter: blur(4px);*/
+}
+
+.tween-void
+{
+	animation: tweenVoidFrames 10s ease-in-out infinite;
+	backface-visibility: hidden;
+}
+
+@keyframes tweenVoidFrames
+{
+	0%		{  transform: translate(-50%, -50%) scale(1); }
+	50%		{  transform: translate(-50%, -50%) scale(1.6); }
+	100%	{  transform: translate(-50%, -50%) scale(1); }
 }
