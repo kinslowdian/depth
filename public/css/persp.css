@@ -115,3 +115,11 @@ html, body
 	50%		{  transform: translate(-50%, -50%) scale(1.6); }
 	100%	{  transform: translate(-50%, -50%) scale(1); }
 }
+
+.gfx-circle
+{
+	background-image: url(../img/circle.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+}

@@ -66,8 +66,8 @@ function perspi_populate_run(layer, parentNum)
 		var string = '<div class="parti_' + parentNum + '_' + i + ' parti"></div>';
 		var build_obj = {};
 
-		build_obj.x = Math.round(Math.random() * (perspi_main.display.w - 4) + 4);
-		build_obj.y = Math.round(Math.random() * (perspi_main.display.h - 4) + 4);
+		build_obj.x = Math.round(Math.random() * (perspi_main.display.w - -perspi_main.display.w) + -perspi_main.display.w);
+		build_obj.y = Math.round(Math.random() * (perspi_main.display.h - -perspi_main.display.h) + -perspi_main.display.h);
 		build_obj.s = Math.round(Math.random() * (perspi_main.sizeMax - perspi_main.sizeMin) + perspi_main.sizeMin);
 
 		build.push(build_obj);
@@ -93,24 +93,6 @@ function perspi_populate_run(layer, parentNum)
 
 function perspi_loop(layer)
 {
-	/*
-	var depth = 0;
-	var seconds = 0;
-
-	depth 	= parseInt(layer.getAttribute("data-depth"));
-
-	if(depth == 1)
-	{
-		perspi_main.timing ++;
-	}
-
-	seconds = (perspi_main.timing * perspi_main.layers) * (perspi_main.timingVal + depth);
-
-	trace("test " + depth + " " + seconds);
-	
-	layer.style.animationDuration = seconds + 's';
-	*/
-
 	layer.classList.add("tween-zoom");
 
 	layer.addEventListener("animationend", perspi_event, false);	
