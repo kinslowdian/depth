@@ -3,9 +3,13 @@ var trace = function(msg){ console.log(msg); };
 
 var perspi_main;
 
+var svgMarkup;
+
 function pageLoad_init()
 {
 	trace("pageLoad_init();");
+
+	svgMarkup = '<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="100"/></svg>';
 
 	perspi_setup();
 }
@@ -63,7 +67,7 @@ function perspi_populate_run(layer, parentNum)
 
 	for(var i = 0; i < perspi_main.maxParticles; i++)
 	{
-		var string = '<div class="parti_' + parentNum + '_' + i + ' parti"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="100"/></svg></div>';
+		var string = '<div class="parti_' + parentNum + '_' + i + ' parti">' + svgMarkup + '</div>';
 		var build_obj = {};
 
 		build_obj.x = Math.round(Math.random() * (perspi_main.display.w - -perspi_main.display.w) + -perspi_main.display.w);
